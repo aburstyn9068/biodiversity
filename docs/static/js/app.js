@@ -12,9 +12,8 @@ d3.json("samples.json").then((data) => {
     names.forEach(function(name) {
         console.log(name);
         var item = menu.append("option");
-        var cell = item.append("option");
-        cell.text(name);
-        cell.value(name);
+        item.text(name);
+        item.value(name);
       });
 
     //  Create the Traces
