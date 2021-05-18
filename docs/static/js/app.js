@@ -10,6 +10,7 @@ d3.json("samples.json").then((data) => {
     var menu = d3.select("#selDataset");
     
     names.forEach(function(name) {
+        console.log(name);
         var item = menu.append("option");
         var cell = item.append("option");
         cell.text(name);
