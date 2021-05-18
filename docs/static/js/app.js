@@ -1,7 +1,7 @@
 // Read the JSON file
 d3.json("samples.json").then((data) => {
     console.log(data);
-    names = data.names;
+    var names = data.names;
     console.log(names);
     //  Create the Traces
     // var trace1 = {
