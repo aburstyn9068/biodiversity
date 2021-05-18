@@ -9,11 +9,12 @@ d3.json("samples.json").then((data) => {
     // Get a reference to the drop down menu
     var menu = d3.select("#selDataset");
     
+    // Iterate through names and add each name as an option in the drop down menu
     names.forEach(function(name) {
         console.log(name);
         var item = menu.append("option");
         item.text(name);
-        item.value(name);
+        //item.value(name);
       });
 
     //  Create the Traces
