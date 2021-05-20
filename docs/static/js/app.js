@@ -50,42 +50,65 @@ d3.json("samples.json").then((data) => {
         demoInfo.append("ul").text(`BWFREQ: ${data.metadata[indexID].wfreq}`);
         demoInfo.append("ul").text(`ID: ${data.metadata[indexID].id}`);
 
-        // Create plot
+        // Create charts
         // Get the data and collect the top 10 samples
         var x = data.samples[indexID].sample_values;
         console.log(x);
         var xSliced = x.slice(0,10);
         var y = data.samples[indexID].otu_ids;
         var ySliced = y.slice(0,10).reverse();
-        ySliced = ySliced.map(item => "OTU "+(item.toString()));
         console.log(ySliced);
-        var text = data.samples[indexID].otu_labels.slice(0,10).reverse();
+        var text = data.samples[indexID].otu_labels
+        var textSliced = text.slice(0,10).reverse();
         
-        var trace = {
+        // Bar graph
+        var trace1 = {
           x: xSliced.reverse(),
-          y: ySliced,
-          text: text,
+          y: ySliced.map(item => "OTU "+(item.toString())),
+          text: textSliced,
           type: "bar",
           name: "Biodiversity",
           orientation: "h"
         }
         
-        var layout = {
+        // Bar graph layout
+        var layout1 = {
             yaxis: {
-                //type: "category"
-            }
+                type: "category",
+                title: "OTU ID"
+            },
+            title: "Top 10 Bacteria Cultures Found"
         }
       
-        Plotly.newPlot("bar", [trace], layout);
+        Plotly.newPlot("bar", [trace1], layout1);
+
+        // Bubble Chart
+        var trace2 = {
+            x: y,
+            y: x,
+            mode: "markers",
+            marker: {
+                color: y,
+                size: x
+            },
+            text: text
+        }
+        var layout2 = {
+            xaxis: {
+                title: "OTU ID"
+            },
+            title: "Bacteria Cultures Per Sample"
+        }
+        Plotly.newPlot("bubble", [trace2], layout2);
     }
 });
 
-// Unpack function
-function unpack(rows, index) {
-    return rows.map(function(row) {
-      return row[index];
-    });
-}
+// // Unpack function
+// function unpack(rows, index) {
+//     return rows.map(function(row) {
+//       return row[index];
+//     });
+// }
 
 
 
