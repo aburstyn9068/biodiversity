@@ -100,6 +100,24 @@ d3.json("samples.json").then((data) => {
             title: "Bacteria Cultures Per Sample"
         }
         Plotly.newPlot("bubble", [trace2], layout2);
+
+        // Gauge
+        var trace3 = {
+                domain: { x: [0, 1], y: [0, 1] },
+                value: data.metadata[indexID].wfreq,
+                title: { text: "Bellybutton Washing Frequency (Scrubs per Week)" },
+                type: "indicator",
+                mode: "gauge+number",
+                gauge: { axis: { visible: true, range: [0, 9] } }
+        }
+        var layout3 = {
+            yaxis: {
+              tickmode: "linear",
+              tick0: 0,
+              dtick: 1
+            }
+        }
+        Plotly.newPlot("gauge", [trace3], layout3);
     }
 });
 
