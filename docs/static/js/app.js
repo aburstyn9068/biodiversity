@@ -108,7 +108,15 @@ d3.json("samples.json").then((data) => {
                 title: { text: "Bellybutton Washing Frequency (Scrubs per Week)" },
                 type: "indicator",
                 mode: "gauge+number",
-                gauge: { axis: { visible: true, range: [0, 9] } }
+                gauge: {
+                    axis: {
+                        visible: true,
+                        range: [0, 9],
+                        tick0: 0,
+                        dtick: 1
+                    }
+                    
+                }
         }
         var layout3 = {
             yaxis: {
