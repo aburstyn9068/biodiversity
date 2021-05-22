@@ -105,7 +105,7 @@ d3.json("samples.json").then((data) => {
         var trace3 = {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: data.metadata[indexID].wfreq,
-                title: { text: "Bellybutton Washing Frequency (Scrubs per Week)" },
+                title: { text: "Bellybutton Wash Frequency (Scrubs/Week)" },
                 type: "indicator",
                 mode: "gauge+number",
                 gauge: {
@@ -128,13 +128,6 @@ d3.json("samples.json").then((data) => {
         Plotly.newPlot("gauge", [trace3], layout3);
     }
 });
-
-// // Unpack function
-// function unpack(rows, index) {
-//     return rows.map(function(row) {
-//       return row[index];
-//     });
-// }
 
 
 
