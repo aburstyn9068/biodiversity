@@ -1,4 +1,4 @@
-# biodiversity.github.io
+# biodiversity
 This repository contains the JavaScript and HTML code files for an interactive dahsboard. The dashboard displays information about data from a study done on "Belly Button Biodiversity." The data collected was about the volumes of microbial species, or operational taxonomic units (OTUs) found in human navels.
 
 The collected data was stored in a JSON file and its contents were imported using JavaScript. All the subject IDs were collected and added to the HTML file to allow for the user to select which subject ID they want to view. A dropdown menu is included on the website to allow for user selection. The page will default to display subject 940.
@@ -21,3 +21,5 @@ The bubble chart gives a different visual represenation of the number of culture
 The gauge chart shows the frewuency of belly button washes each week. The gauge ranges from 0 to 9. It fills in a green line display the number of washes per week. A numerical display also shows the number of washes per week.
 
 All the information displayed will automatically adjust to display the appropriate data from the user selected subject ID.
+
+The dashboard can be viewed at: https://aburstyn9068.github.io/biodiversity/
